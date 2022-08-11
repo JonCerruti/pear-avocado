@@ -52,9 +52,9 @@ app.delete("/api/notes/:id", (req, res) => {
   console.log("Note Deleted")
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(__dirname, './public/index.html')
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(__dirname, './public/index.html')
+// });
 
 app.listen(PORT, () =>{
   console.info(`app listening at http://localhost:${PORT} 🚀`)
