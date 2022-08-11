@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const notes = require('./db/db.json');
 const { v4: uuidv4 } = require('uuid');
-const { json } = require('express');
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -19,17 +19,6 @@ app.use(express.static('public'));
 app.get('/api/notes', (req, res) => {
   res.sendFile(path.join(__dirname, './db/db.json'))
 });
-
-// GET Route for homepage
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'))
-});
-
-// GET Route for notes page
-app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/notes.html'))
-});
-
 
 
 // POST to add new notes to db.json 
@@ -52,9 +41,19 @@ app.delete("/api/notes/:id", (req, res) => {
   console.log("Note Deleted")
 });
 
-// app.get('*', (req, res) => {
-//   res.sendFile(__dirname, './public/index.html')
-// });
+// GET Route for homepage
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+});
+
+// GET Route for notes page
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/notes.html'))
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(__dirname, './public/index.html')
+});
 
 app.listen(PORT, () =>{
   console.info(`app listening at http://localhost:${PORT} 🚀`)
