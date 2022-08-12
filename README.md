@@ -48,10 +48,7 @@ The usage of this application is to be able to take notes to organize thoughts, 
 ---
 
 ## Page in Use
-![Page Gif](./images/app.gif)
-![Home-Page](./images/home-page.png)
-![Note-Home-Page](./images/notes-home.png)
-![Added-Note-Page](./images/notes-added-note.png)
+[![Page Gif](./images/app.gif)](https://powerful-brook-99950.herokuapp.com/)
 
 ---
 
